@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3dff50b2d8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
+    <title>Admin</title>
+</head>
+
+<body>
+    <header class="header">
+        <a class="function" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></a>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-info">
+                <a href="admin.html"><i class="fa-solid fa-file-invoice"></i> Quản lí đơn hàng</a>
+                <a href="adminUser.html"><i class="fa-solid fa-user"></i> Quản lí người dùng</a>
+                <a href="adminProduct.html"><i class="fa-solid fa-box"></i> Quản lí sản phẩm</a>
+            </div>
+        </div>
+        <a class="logo"><i class="fa-brands fa-mailchimp"></i> PYP.Admin</a>
+        <ul class="userfunction">
+            <li><a onclick="toggleLogin()"><i class="fa-solid fa-user"></i></a></li>
+            <div class="login1" id="login1">
+                <div class="login-info">
+                    <a style="color: white;">Xin chào, admin NHOM12!</a>
+                    <a href="index.html" style="color: white;">Đăng xuất</a>
+                </div>
+            </div>
+        </ul>
+    </header>
+    <div class="managerProduct" style="display: block;">
+        <div class="upper-btn-box">
+            <a class="headmanage">QUẢN LÍ SẢN PHẨM</a>
+            <div class="right-box">
+                <button id = "mybtn"  class="mybtn" onclick="popupAddProduct()" ><i class="fa fa-plus "></i>Thêm sản phẩm</button>
+            </div>
+        </div>
+        
+        
+        <div class="productList">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Ảnh sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Loại</th>
+                        <th>Giá tiền</th>
+                        <th>Hoạt động</th>
+                    </tr>
+                    
+                    <tr>
+                        <td><img src="image/Ga1.png" style="width: 30%;"></td>
+                        <td>Combo khuyến mãi MayoB</td>
+                        <td>Chicken</td>
+                        <td>129.000</td>
+                        <td>
+                            <button onclick="popupEditProduct21()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Ga2.png" style="width: 30%;"></td>
+                        <td>Combo MayoB 2</td>
+                        <td>Chicken</td>
+                        <td>155.000</td>
+                        <td>
+                            <button onclick="popupEditProduct22()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Ga3.png" style="width: 30%;"></td>
+                        <td>Combo MayoB 3</td>
+                        <td>Chicken</td>
+                        <td>253.000</td>
+                        <td>
+                            <button onclick="popupEditProduct23()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Ga4.png" style="width: 30%;"></td>
+                        <td>Combo MayoB 4</td>
+                        <td>Chicken</td>
+                        <td>263.000</td>
+                        <td>
+                            <button onclick="popupEditProduct24()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Burger1.png" style="width: 30%;"></td>
+                        <td>Hamburger cá</td>
+                        <td>Hamburger</td>
+                        <td>57.000</td>
+                        <td>
+                            <button onclick="popupEditProduct25()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Burger2.png" style="width: 30%;"></td>
+                        <td>Hamburger tôm</td>
+                        <td>Hamburger</td>
+                        <td>60.000</td>
+                        <td>
+                            <button onclick="popupEditProduct26()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Burger3.png" style="width: 30%;"></td>
+                        <td>Hamburger gà</td>
+                        <td>Hamburger</td>
+                        <td>55.000</td>
+                        <td>
+                            <button onclick="popupEditProduct27()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Burger5.png" style="width: 30%;"></td>
+                        <td>Combo hamburger</td>
+                        <td>Hamburger</td>
+                        <td>55.000</td>
+                        <td>
+                            <button onclick="popupEditProduct28()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Miy1.png" style="width: 30%;"></td>
+                        <td>Mì ý S2</td>
+                        <td>Spaghetti&Rice</td>
+                        <td>57.000</td>
+                        <td>
+                            <button onclick="popupEditProduct29()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Miy2.png" style="width: 30%;"></td>
+                        <td>Mì ý S4</td>
+                        <td>Spaghetti&Rice</td>
+                        <td>145.000</td>
+                        <td>
+                            <button onclick="popupEditProduct210()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Com.png" style="width: 30%;"></td>
+                        <td>Combo cơm gà</td>
+                        <td>Spaghetti&Rice</td>
+                        <td>157.000</td>
+                        <td>
+                            <button onclick="popupEditProduct211()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Snack.png" style="width: 30%;"></td>
+                        <td>Khoai tây nghiền</td>
+                        <td>Snack</td>
+                        <td>60.000</td>
+                        <td>
+                            <button onclick="popupEditProduct212()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Snack1.png" style="width: 30%;"></td>
+                        <td>Bánh Tart phô mai</td>
+                        <td>Snack</td>
+                        <td>55.000</td>
+                        <td>
+                            <button onclick="popupEditProduct213()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Snack2.png" style="width: 30%;"></td>
+                        <td>Snack mực</td>
+                        <td>Snack</td>
+                        <td>55.000</td>
+                        <td>
+                            <button onclick="popupEditProduct214()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Snack3.png" style="width: 30%;"></td>
+                        <td>Bắp cải trộn</td>
+                        <td>Snack</td>
+                        <td>55.000</td>
+                        <td>
+                            <button onclick="popupEditProduct215()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Sprite.png" style="width: 30%;"></td>
+                        <td>Sprite</td>
+                        <td>Drink</td>
+                        <td>24.000</td>
+                        <td>
+                            <button onclick="popupEditProduct216()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Coca.png" style="width: 30%;"></td>
+                        <td>Coca Cola</td>
+                        <td>Drink</td>
+                        <td>24.000</td>
+                        <td>
+                            <button onclick="popupEditProduct217()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Fanta.png" style="width: 30%;"></td>
+                        <td>Fanta</td>
+                        <td>Drink</td>
+                        <td>24.000</td>
+                        <td>
+                            <button onclick="popupEditProduct218()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="image/Dasani.png" style="width: 30%;"></td>
+                        <td>Dasani</td>
+                        <td>Drink</td>
+                        <td>20.000</td>
+                        <td>
+                            <button onclick="popupEditProduct219()"><i class="fa fa-pen"></i></button>
+                            <button onclick="popupDeleteProduct()"><i class="fa fa-trash" style="color: red; margin-left: 0.5px;"></i></button>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+            
+        </div>
+        <div id="myModal1" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Thêm sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;"></p>
+                    <p>Loại<input style="width: 50%;"></p>
+                    <p>Giá tiền<input style="width: 50%;"></p>
+                    <p>Hình ảnh<input type="file" onchange="changeimgadd(this)"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Tạo</a></button>
+                </div>
+            </div>
+        </div>
+
+        <!--Sửa sản phẩm-->
+        <div id="myModal21" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Combo khuyến mãi MayoB"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Chicken"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="129.000"></p>
+                    <p>Hình ảnh
+                        <img id="Ga1" src="image/Ga1.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close1" class="close" style="width: 10%; margin-right: 180px; color: gray;" onclick="deleteImg1()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal22" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Combo MayoB 2"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Chicken"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="155.000"></p>
+                    <p>Hình ảnh
+                        <img id="Ga2" src="image/Ga2.png" style="width: 12%;margin-left: 250px;">
+                        <span id="close2" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg2()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal23" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Combo MayoB 3"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Chicken"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="253.000"></p>
+                    <p>Hình ảnh
+                        <img id="Ga3" src="image/Ga3.png" style="width: 12%;margin-left: 250px;">
+                        <span id="close3" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg3()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal24" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Combo MayoB 4"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Chicken"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="263.000"></p>
+                    <p>Hình ảnh
+                        <img id="Ga4" src="image/Ga4.png" style="width: 12%;margin-left: 250px;">
+                        <span id="close4" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg4()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal25" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Hamburger cá"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Hamburger"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="57.000"></p>
+                    <p>Hình ảnh
+                        <img id="burger1" src="image/Burger1.png" style="width: 12%;margin-left: 250px;">
+                        <span id="close5" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg5()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal26" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Hamburger tôm"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Hamburger"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="60.000"></p>
+                    <p>Hình ảnh
+                        <img id="burger2" src="image/Burger2.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close6" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg6()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal27" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Hamburger gà"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Hamburger"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="55.000"></p>
+                    <p>Hình ảnh
+                        <img id="burger3" src="image/Burger3.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close7" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg7()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal28" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Combo hamburger"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Hamburger"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="55.000"></p>
+                    <p>Hình ảnh
+                        <img id="burger5" src="image/Burger5.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close8" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg8()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal29" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Mì ý S2"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Spaghetti&Rice"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="57.000"></p>
+                    <p>Hình ảnh
+                        <img id="miy1" src="image/Miy1.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close9" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg9()">&times;</span>
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal210" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Mì ý S4"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Spaghetti&Rice"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="145.000"></p>
+                    <p>Hình ảnh
+                        <img id="miy2" src="image/Miy2.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close10" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg10()">&times;</span>
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal211" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Combo cơm gà"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Spaghetti&Rice"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="157.000"></p>
+                    <p>Hình ảnh
+                        <img id="com" src="image/Com.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close11" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg11()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal212" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Khoai tây nghiền"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Snack"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="60.000"></p>
+                    <p>Hình ảnh
+                        <img id="snack" src="image/Snack.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close12" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg12()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal213" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Bánh Tart phô mai"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Snack"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="55.000"></p>
+                    <p>Hình ảnh
+                        <img id="snack1" src="image/Snack1.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close13" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg13()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal214" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Snack mực"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Snack"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="55.000"></p>
+                    <p>Hình ảnh
+                        <img id="snack2" src="image/Snack2.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close14" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg14()">&times;</span>
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal215" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Bắp cải trộn"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Snack"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="55.000"></p>
+                    <p>Hình ảnh
+                        <img id="snack3" src="image/Snack3.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close15" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg15()">&times;</span>
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal216" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Sprite"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Drink"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="24.000"></p>
+                    <p>Hình ảnh
+                        <img id="sprite" src="image/Sprite.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close16" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg16()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal217" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Coca Cola"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Drink"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="24.000"></p>
+                    <p>Hình ảnh
+                        <img id="coca" src="image/Coca.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close17" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg17()">&times;</span>
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal218" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Fanta"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Drink"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="24.000"></p>
+                    <p>Hình ảnh
+                        <img id="fanta" src="image/Fanta.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close18" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg18()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal219" class="modal1" style="display: none;">
+            <div class="modal-content1" style="margin-top: 112px;">
+                <div class="modal-header">
+                    <h4>Sửa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Tên sản phẩm<input style="width: 50%;" placeholder="Dasani"></p>
+                    <p>Loại<input style="width: 50%;" placeholder="Drink"></p>
+                    <p>Giá tiền<input style="width: 50%;" placeholder="24.000"></p>
+                    <p>Hình ảnh
+                        <img id="dasani" src="image/Dasani.png" style="width: 12%; margin-left: 250px;">
+                        <span id="close19" class="close" style="width: 10%; margin-right: 180px;color: gray;"onclick="deleteImg19()">&times;</span>    
+                    </p>
+                    <input type="file" onchange="changeimgadd(this)">
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Sửa</a></button>
+                </div>
+            </div>
+        </div>
+        <!--Sửa sản phẩm-->
+
+        <div id="myModal3" class="modal1" style="display: none;">
+            <div class="modal-content1">
+                <div class="modal-header">
+                    <h4>Xóa sản phẩm</h4>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn có chắc chắn xóa sản phẩm?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="add"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Không</a></button>
+                    <button class="remove" style="margin-right: 7px;"><a href="adminProduct.html" style="color: #fff;" onclick="hidePopup()">Có</a></button>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <script>
+        function popupAddProduct() {
+            document.querySelector('#myModal1').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.querySelector('#myModal1').style.display = 'none';
+            document.querySelector('#myModal21').style.display = 'none';
+            document.querySelector('#myModal22').style.display = 'none';
+            document.querySelector('#myModal23').style.display = 'none';
+            document.querySelector('#myModal24').style.display = 'none';
+            document.querySelector('#myModal25').style.display = 'none';
+            document.querySelector('#myModal26').style.display = 'none';
+            document.querySelector('#myModal27').style.display = 'none';
+            document.querySelector('#myModal28').style.display = 'none';
+            document.querySelector('#myModal29').style.display = 'none';
+            document.querySelector('#myModal210').style.display = 'none';
+            document.querySelector('#myModal211').style.display = 'none';
+            document.querySelector('#myModal212').style.display = 'none';
+            document.querySelector('#myModal213').style.display = 'none';
+            document.querySelector('#myModal214').style.display = 'none';
+            document.querySelector('#myModal215').style.display = 'none';
+            document.querySelector('#myModal216').style.display = 'none';
+            document.querySelector('#myModal217').style.display = 'none';
+            document.querySelector('#myModal218').style.display = 'none';
+            document.querySelector('#myModal219').style.display = 'none';
+            document.querySelector('#myModal3').style.display = 'none';
+        }
+
+        function popupEditProduct21() {
+            document.querySelector('#myModal21').style.display = 'block';
+        }
+        function popupEditProduct22() {
+            document.querySelector('#myModal22').style.display = 'block';
+        }
+        function popupEditProduct23() {
+            document.querySelector('#myModal23').style.display = 'block';
+        }
+        function popupEditProduct24() {
+            document.querySelector('#myModal24').style.display = 'block';
+        }
+        function popupEditProduct25() {
+            document.querySelector('#myModal25').style.display = 'block';
+        }
+        function popupEditProduct26() {
+            document.querySelector('#myModal26').style.display = 'block';
+        }
+        function popupEditProduct27() {
+            document.querySelector('#myModal27').style.display = 'block';
+        }
+        function popupEditProduct28() {
+            document.querySelector('#myModal28').style.display = 'block';
+        }
+        function popupEditProduct29() {
+            document.querySelector('#myModal29').style.display = 'block';
+        }
+        function popupEditProduct210() {
+            document.querySelector('#myModal210').style.display = 'block';
+        }
+        function popupEditProduct211() {
+            document.querySelector('#myModal211').style.display = 'block';
+        }
+        function popupEditProduct212() {
+            document.querySelector('#myModal212').style.display = 'block';
+        }
+        function popupEditProduct213() {
+            document.querySelector('#myModal213').style.display = 'block';
+        }
+        function popupEditProduct214() {
+            document.querySelector('#myModal214').style.display = 'block';
+        }
+        function popupEditProduct215() {
+            document.querySelector('#myModal215').style.display = 'block';
+        }
+        function popupEditProduct216() {
+            document.querySelector('#myModal216').style.display = 'block';
+        }
+        function popupEditProduct217() {
+            document.querySelector('#myModal217').style.display = 'block';
+        }
+        function popupEditProduct218() {
+            document.querySelector('#myModal218').style.display = 'block';
+        }
+        function popupEditProduct219() {
+            document.querySelector('#myModal219').style.display = 'block';
+        }
+
+        function popupDeleteProduct() {
+            document.querySelector('#myModal3').style.display = 'block';
+        }
+
+        //Bỏ hình
+
+        function deleteImg1() {
+            document.querySelector('#Ga1').style.display = 'none';
+            document.querySelector('#close1').style.display = 'none';
+        }
+        function deleteImg2() {
+            document.querySelector('#Ga2').style.display = 'none';
+            document.querySelector('#close2').style.display = 'none';
+        }
+        function deleteImg3() {
+            document.querySelector('#Ga3').style.display = 'none';
+            document.querySelector('#close3').style.display = 'none';
+        }
+        function deleteImg4() {
+            document.querySelector('#Ga4').style.display = 'none';
+            document.querySelector('#close4').style.display = 'none';
+        }
+        function deleteImg5() {
+            document.querySelector('#burger1').style.display = 'none';
+            document.querySelector('#close5').style.display = 'none';
+        }
+        function deleteImg6() {
+            document.querySelector('#burger2').style.display = 'none';
+            document.querySelector('#close6').style.display = 'none';
+        }
+        function deleteImg7() {
+            document.querySelector('#burger3').style.display = 'none';
+            document.querySelector('#close7').style.display = 'none';
+        }
+        function deleteImg8() {
+            document.querySelector('#burger5').style.display = 'none';
+            document.querySelector('#close8').style.display = 'none';
+        }
+        function deleteImg9() {
+            document.querySelector('#miy1').style.display = 'none';
+            document.querySelector('#close9').style.display = 'none';
+        }
+        function deleteImg10() {
+            document.querySelector('#miy2').style.display = 'none';
+            document.querySelector('#close10').style.display = 'none';
+        }
+        function deleteImg11() {
+            document.querySelector('#com').style.display = 'none';
+            document.querySelector('#close11').style.display = 'none';
+        }
+        function deleteImg12() {
+            document.querySelector('#snack').style.display = 'none';
+            document.querySelector('#close12').style.display = 'none';
+        }
+        function deleteImg13() {
+            document.querySelector('#snack1').style.display = 'none';
+            document.querySelector('#close13').style.display = 'none';
+        }
+        function deleteImg14() {
+            document.querySelector('#snack2').style.display = 'none';
+            document.querySelector('#close14').style.display = 'none';
+        }
+        function deleteImg15() {
+            document.querySelector('#snack3').style.display = 'none';
+            document.querySelector('#close15').style.display = 'none';
+        }
+        function deleteImg16() {
+            document.querySelector('#sprite').style.display = 'none';
+            document.querySelector('#close16').style.display = 'none';
+        }
+        function deleteImg17() {
+            document.querySelector('#coca').style.display = 'none';
+            document.querySelector('#close17').style.display = 'none';
+        }
+        function deleteImg18() {
+            document.querySelector('#fanta').style.display = 'none';
+            document.querySelector('#close18').style.display = 'none';
+        }
+        function deleteImg19() {
+            document.querySelector('#dasani').style.display = 'none';
+            document.querySelector('#close19').style.display = 'none';
+        }
+
+    </script>
+</body>
+</html>

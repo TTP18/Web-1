@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&family=Ubuntu:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: 'Rowdies', cursive;
+}
+
+body {
+  background-color: #FFF5E1;
+}
+
+/*----------------------------------------header----------------------------------------*/
+.header {
+  background: #FF8C00;
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: space-between;
+}
+
+.header .logo,
+.header .menu {
+  color: #ffffff;
+}
+
+.logo {
+  font-size: 40px;
+  padding: 0px 20px;
+  cursor: pointer;
+}
+
+.content,
+.userfunction {
+  display: flex;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.content li,
+.userfunction li {
+  padding: 20px 20px;
+}
+
+.content li:hover,
+.userfunction li:hover {
+  background-color: #FFA500;
+  cursor: pointer;
+}
+
+/*----------------------------------------header----------------------------------------*/
+.advertisement img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  color: #FF8C00;
+  text-decoration: underline;
+  text-align: center;
+  padding-top: 10px;
+}
+
+/*----------------------------------------slider----------------------------------------*/
+.slider {
+  display: flex;
+  padding: 30px 70px;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  display: flex;
+  max-width: 1200px;
+  position: relative;
+  box-shadow: 3px 3px 3px #cfcfcf;
+  border-radius: 20px;
+}
+
+.slide i {
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #FF8C00;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: 0.1s linear;
+}
+
+.slide i:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+.slide i:first-child {
+  left: -22px;
+}
+
+.slide i:last-child {
+  right: -22px;
+}
+
+.slide .carousel {
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging img {
+  pointer-events: none;
+}
+
+.carousel img {
+  height: auto;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.carousel img:first-child {
+  margin-left: 0px;
+}
+
+/*----------------------------------------slider----------------------------------------*/
+/*---------------------------------------products---------------------------------------*/
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#search-container input {
+  background-color: #FFF5E1;
+  width: 50%;
+  border-bottom: 2px solid black;
+  padding: 10px 5px;
+}
+
+#search-container input:focus {
+  border-bottom-color: lightseagreen;
+}
+
+.search-price {
+  display: flex;
+  padding: 10px 10px;
+  gap: 10px;
+  color: lightseagreen;
+  justify-content: center;
+}
+
+.item input{
+  border-radius: 15px;
+  padding: 5px 5px;
+  width: 100px;
+  border: 1px;
+  border-color: lightseagreen;
+}
+
+#search-container button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: lightseagreen;
+  color: #ffffff;
+  border-radius: 25px;
+  margin-top: 5px;
+}
+
+.button-value {
+  border: 2px solid lightseagreen;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: transparent;
+  color: lightseagreen;
+  cursor: pointer;
+}
+
+.btn-active {
+  background-color: lightseagreen;
+  color: #ffffff;
+}
+
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding: 20px 65px;
+}
+
+.card {
+  flex-basis: 23%;
+  background-color: #ffffff;
+  height: auto;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 3px 3px 3px rgba(1, 2, 68, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+}
+
+.card:hover h4 {
+  text-decoration: underline;
+}
+
+.imagecontainer {
+  text-align: center;
+}
+
+.imagecontainer img {
+  width: 100%;
+  object-fit: contain;
+  height: auto;
+}
+
+.container {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+
+.container h4 {
+  font-weight: 500;
+  color: #FF8C00;
+}
+
+.container h5 {
+  color: black;
+  padding-top: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.btn-container i {
+  background-color: lightseagreen;
+  color: #ffffff;
+  padding: 10px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.btn-container i:hover {
+  background-color: #FF8C00;
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+
+/*---------------------------------------products---------------------------------------*/
+/*----------------------------------------Cart----------------------------------------*/
+.cart {
+  margin: auto;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.cart h2 {
+  margin-bottom: 20px;
+
+}
+
+.cart table {
+  width: 100%;
+}
+
+.cart table thead tr th:last-child {
+  text-align: right;
+}
+
+.cart table tr td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px 10px;
+}
+
+.cart table tbody tr td:last-child {
+  text-align: right;
+}
+
+.cart {
+  position: fixed;
+  height: 100vh;
+  width: 600px;
+  top: 0;
+  right: 0;
+  right: -100%;
+  background-color: whitesmoke;
+  padding: 12px 20px;
+  overflow-y: scroll;
+  transition: all 0.3s ease;
+  box-shadow: -3px -3px 10px #cfcfcf;
+  justify-content: space-between;
+}
+
+.cart button {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  height: 30px;
+  padding: 0 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: tomato;
+  color: white;
+}
+
+.cart-icon {
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+}
+
+.cart i {
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.error {
+  color: red; 
+  font-size: medium;
+  font-family: Arial, sans-serif;
+}
+
+/*----------------------------------------Cart----------------------------------------*/
+.products-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, .5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.products-preview .preview {
+  display: none;
+  width: 35%;
+  height: auto;
+  padding: 30px;
+  text-align: center;
+  background: #fff;
+  position: relative;
+}
+
+.products-preview .preview-info p {
+  padding: 10px 10px;
+}
+
+.products-preview .preview-info span {
+  padding-top: 10px;
+  color: lightseagreen;
+}
+
+.products-preview .preview.active {
+  display: inline-block;
+}
+
+.products-preview .preview img {
+  height: auto;
+  width: 100%;
+}
+
+.products-preview .preview .fa-times {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  color: black;
+  font-size: 25px;
+}
+
+/*----------------------------------------footer----------------------------------------*/
+.footer {
+  background-color: #FF8C00;
+  color: white;
+}
+
+.gridrow {
+  display: flex;
+}
+
+.column24 {
+  padding: 30px 45px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column24 a {
+  color: white;
+}
+
+.footerlogo {
+  font-size: 45px;
+}
+
+.hotline {
+  padding: 10px 25px;
+  font-size: larger;
+  list-style-type: none;
+}
+
+.minicontent {
+  padding: 20px 0px;
+  font-size: small;
+  list-style-type: none;
+}
+
+/*----------------------------------------footer----------------------------------------*/
+
+.login1{
+  position: absolute;
+  top: 10%;
+  right: 5px; 
+  max-height: 0px;
+  overflow: hidden;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+.login-info{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #FFA500;
+  color: #ffffff;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+.login1.open1{
+  max-height: 300px;
+}
+
+#price-filter{
+  padding: 5px 5px;
+  border-radius: 15px;
+  color: white;
+  background-color: lightseagreen;
+}
+
+.listPage{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 20px;
+  list-style-type: none;
+}
+
+.listPage li {
+  background-color: lightseagreen;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.listPage .active{
+  background-color: #FFF5E1;
+  color: lightseagreen;
+  border: 2px solid;
+}

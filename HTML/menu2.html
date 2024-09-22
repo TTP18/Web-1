@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYP.menu</title>
+    <script src="https://kit.fontawesome.com/3dff50b2d8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="menu.css">
+    <script src="menu.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <a class="logo" href="index2.html"><i class="fa-brands fa-mailchimp"></i> PYP.</a>
+        <ul class="content">
+            <li><a>Thực đơn</a></li>
+            <li><a>Về chúng tôi</a></li>
+            <li><a>Khuyến mãi</a></li>
+        </ul>
+        <ul class="userfunction">
+            <li class="cart-icon"><a><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a onclick="toggleLogin()"><i class="fa-solid fa-user"></i></a></li>
+            <div class="login1" id="login1">
+                <div class="login-info">
+                    <a style="color: white;">Xin chào, NHOM12!</a>
+                    <a href="history.html" style="color: white;">Lịch sử đơn hàng</a>
+                    <a href="index.html" style="color: white;">Đăng xuất</a>
+                </div>
+            </div>
+        </ul>
+    </header>
+
+    <section class="advertisement">
+        <img src="image/AnhMenu.png" alt="">
+    </section>
+    <h1>THỰC ĐƠN</h1>
+    <section class="wrapper">
+        <div>
+            <div id="search-container">
+                <input type="search" id="search-input" placeholder="Bạn muốn ăn gì ..." />
+                <button id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div id="buttons">
+                <button class="button-value" onclick="filterProduct('all')">All</button>
+                <button class="button-value" onclick="filterProduct('Chicken')">
+                    Chicken
+                </button>
+                <button class="button-value" onclick="filterProduct('Hamburger')">
+                    Hamburger
+                </button>
+                <button class="button-value" onclick="filterProduct('Spaghetti&Rice')">
+                    Spaghetti&Rice
+                </button>
+                <button class="button-value" onclick="filterProduct('Snack')">
+                    Snack
+                </button>
+                <button class="button-value" onclick="filterProduct('Drink')">
+                    Drink
+                </button>
+            </div>
+            <div class="search-price">
+                <div class="item">
+                    <label for="">Min Prices</label>
+                    <input type="number" name="minPrice">
+                </div>
+                <div class="item">
+                    <label for="">Max Prices</label>
+                    <input type="number" name="maxPrice">
+                </div>
+                <button id="price-filter"><i class="fa-solid fa-filter"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="products" class="products"></div>
+    </section>
+
+    <ul class="listPage">
+        
+    </ul>
+    <script src="pagination.js" defer></script>
+
+    <section>
+        <div class="products-preview">
+            <div class="preview">
+                <i class="fas fa-times"></i>
+                <div class="preview-image">
+                    <img src="image/Ga1.png" alt="">
+                </div>
+                <div class="preview-info">
+                    <h3 class="previewname" style="color: #FF8C00; font-size: 25px; padding-top: 10px;">Combo khuyến mãi
+                        MayoB</h3>
+                    <p>Combo Flashsale (*): 2 miếng gà giòn MayoB, 2 miếng gà không xương, 1 bắp cải trộn, 1 nước tùy
+                        chọn, giá chỉ 129k khi nhập mã MAYOB. (Freeship hỏa tốc cho hóa đơn trên 100k) *Áp dụng trên
+                        web/app và hotline</p>
+                    <span>129.000đ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="detail.js" defer></script>
+
+    <section class="cart">
+        <i id="hidecart" class="fa fa-times" aria-hidden="true"></i>
+        <h2>Cart</h2>
+        <form action="">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sản Phẩm</th>
+                        <th> Giá </th>
+                        <th> SL </th>
+                        <th> Chọn </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--tr>
+                        <td style="display: flex; align-items: center;"><img style="width:70px;" src="c:\Users\ADMIN\Downloads\Anh6.png" alt="">Gà</td>
+                        <td><span>37.000đ</span></td>
+                        <td><input style="width: 30px; outline: none;" type="number" value="1" min="1"></td>
+                        <td style="cursor: pointer;">Xóa</td>
+                    </!--tr>
+                    <tr>
+                        <td style="display: flex; align-items: center;"><img style="width:70px;" src="c:\Users\ADMIN\Downloads\Anh7.png" alt="">Gà</td>
+                        <td><span>99.000đ</span></td>
+                        <td><input style="width: 30px; outline: none;" type="number" value="1" min="1"></td>
+                        <td style="cursor: pointer;">Xóa</td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <div style="text-align: right;" class="price-total">
+                <p style="padding-top: 20px;">Tổng tiền: <span>0</span>đ</p>
+            </div>
+            <button onclick="checkout()"><a id="chotdon" style="color: white;">Chốt Đơn</div></button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="grid">
+            <div class="gridrow">
+                <div class="column24">
+                    <a href="#" class="footerlogo"><i class="fa-brands fa-mailchimp"></i> PYP.</a>
+                </div>
+                <div class="column24">
+                    <a href="" class="footerheading"><i class="fa-solid fa-phone"></i> Hotline đặt hàng</a>
+                    <ul class="hotline">
+                        <li><a href=""></a>19006008</li>
+                    </ul>
+                </div>
+                <div class="column24">
+                    <a href="" class="footerheading"><i class="fa-solid fa-location-dot"></i> Hệ thống cửa hàng</a>
+                    <ul class="minicontent">
+                        <li><a href=""></a>Thành phố Hồ Chí Minh</li>
+                        <li><a href=""></a>Thủ đô Hà Nội</li>
+                        <li><a href=""></a>Thành phố Đà Nẵng</li>
+                    </ul>
+                </div>
+                <div class="column24">
+                    <a href="" class="footerheading"><i class="fa-solid fa-users"></i> Về chúng tôi</a>
+                    <ul class="minicontent">
+                        <li><a href=""></a>Tuyển dụng</li>
+                        <li><a href=""></a>Đội ngũ nhân viên</li>
+                    </ul>
+                </div>
+                <div class="column24">
+                    <a href="" class="footerheading"><i class="fa-solid fa-hand-holding-hand"></i> Chăm sóc khách
+                        hàng</a>
+                    <ul class="minicontent">
+                        <li><a href=""></a>Hướng dẫn đặt món</li>
+                        <li><a href=""></a>Giải quyết vấn đề</li>
+                        <li><a href=""></a>Gmail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3dff50b2d8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
+    <title>Admin</title>
+    <style>
+        .User-manage {
+            margin-top: 30px;
+
+        }
+
+        .User-manage a {
+            color: #FF8C00;
+            font-size: 20px;
+            text-decoration: underline;
+            margin-left: 30px;
+        }
+
+        .User-manage th {
+            background-color: #ffb55a;
+        }
+
+        .User-manage table {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            background-color: white;
+            width: 90%;
+            border-radius: 30px;
+            box-shadow: 3px 3px 3px rgba(1, 2, 68, 0.08);
+            text-align: center;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .User-manage table tbody td {
+            height: 10px;
+            border-bottom: 1px solid rgba(1, 2, 68, 0.08);
+            color: rgb(50, 50, 50);
+        }
+
+        .User-manage tr:hover td {
+            background: #ffd9aa;
+        }
+
+        .User-manage [type="checkbox"]:checked {
+            background-color: rgb(254, 80, 80);
+        }
+
+        .Adduser {
+            background-color: #ffd9aa;
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+
+        .head {
+            padding: 10px 10px;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #headd {
+            color: black;
+        }
+
+        .Submit {
+            display: flex;
+            justify-content: center;
+        }
+
+        #submit {
+            justify-content: center;
+            color: white;
+            background-color: #ffb55a;
+        }
+
+        .User-manage button {
+            color: white;
+            background-color: #ffb55a;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a class="function" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></a>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-info">
+                <a href="admin.html"><i class="fa-solid fa-file-invoice"></i> Quản lí đơn hàng</a>
+                <a href="adminUser.html"><i class="fa-solid fa-user"></i> Quản lí người dùng</a>
+                <a href="adminProduct.html"><i class="fa-solid fa-box"></i> Quản lí sản phẩm</a>
+            </div>
+        </div>
+        <a class="logo"><i class="fa-brands fa-mailchimp"></i> PYP.Admin</a>
+        <ul class="userfunction">
+            <li><a onclick="toggleLogin()"><i class="fa-solid fa-user"></i></a></li>
+            <div class="login1" id="login1">
+                <div class="login-info">
+                    <a style="color: white;">Xin chào, admin NHOM12!</a>
+                    <a href="index.html" style="color: white;">Đăng xuất</a>
+                </div>
+            </div>
+        </ul>
+    </header>
+    <div class="User-manage">
+        <a>QUẢN LÍ TÀI KHOẢN NGƯỜI DÙNG</a>
+        <div class="Adduser">
+            <div class="head"><a id="headd">Thêm thông tin người dùng</a></div>
+            <div>
+                <label>ID người dùng:</label>
+                <input type="number" id="id">
+            </div>
+            <div>
+                <label>Tên người dùng:</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="text" id="email">
+            </div>
+            <div>
+                <label>Ngày đăng kí:</label>
+                <input type="text" id="date">
+            </div>
+            <div class="Submit">
+                <button id="submit" onclick="addUser()">Submit</button>
+            </div>
+        </div>
+        <table id = "show">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên người dùng</th>
+                    <th>Email</th>
+                    <th>Ngày đăng kí</th>
+                    <th>Sửa thông tin</th>
+                    <th>Khóa tài khoản</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Minh Phúc</td>
+                    <td>minhphuc@gmail.com</td>
+                    <td>07/12/2023</td>
+                    <td><button>Sửa</button></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Thanh Phương</td>
+                    <td>thanhphuong@gmail.com</td>
+                    <td>08/11/2023</td>
+                    <td><button>Sửa</button></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Như Ý</td>
+                    <td>nhuy@gmail.com</td>
+                    <td>01/10/2023</td>
+                    <td><button>Sửa</button></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var data = []
+        function addUser() {
+            if (!checkInputs()) {
+                alert("Hãy nhập đầy đủ thông tin.");
+                return;
+            }
+            
+            var id = document.getElementById("id").value
+            var name = document.getElementById("name").value
+            var mail = document.getElementById("email").value
+            var date = document.getElementById("date").value
+
+            var user = {
+                id: id,
+                name: name,
+                mail: mail,
+                date: date
+            }
+
+            let index = data.findIndex((c) => c.id == user.id)
+            if(index >= 0){
+                data.splice(index, 1, user)
+            } else {
+                data.push(user)
+            }
+            
+            showUser()
+            clear()
+        }
+
+        function checkInputs() {
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var mail = document.getElementById("email").value;
+            var date = document.getElementById("date").value;
+
+            if (id === "" || name === "" || mail === "" || date === "") {
+                return false;
+            }
+
+            return true;
+        }
+        
+        function showUser() {
+            table = `<thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên người dùng</th>
+                            <th>Email</th>
+                            <th>Ngày đăng kí</th>
+                            <th>Sửa thông tin</th>
+                            <th>Khóa tài khoản</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Minh Phúc</td>
+                            <td>minhphuc@gmail.com</td>
+                            <td>07/12/2023</td>
+                            <td><button>Sửa</button></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Thanh Phương</td>
+                            <td>thanhphuong@gmail.com</td>
+                            <td>08/11/2023</td>
+                            <td><button>Sửa</button></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Như Ý</td>
+                            <td>nhuy@gmail.com</td>
+                            <td>01/10/2023</td>
+                            <td><button>Sửa</button></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                    </tbody>`
+            for(let i = 0; i < data.length; i++){
+                    table += `<tr>
+                                <td>${data[i].id}</td>
+                                <td>${data[i].name}</td>
+                                <td>${data[i].mail}</td>
+                                <td>${data[i].date}</td>
+                                <td><button onclick="editUser(${data[i].id})">Sửa</button></td>
+                                <td><input type="checkbox"></td>
+                            </tr>`
+            }
+            document.getElementById("show").innerHTML = table
+        }
+
+        function clear(){
+            document.getElementById("id").value ="";
+            document.getElementById("name").value ="";
+            document.getElementById("email").value ="";
+            document.getElementById("date").value =""
+        }
+
+        function editUser(x){
+            for(let i = 0; i < data.length; i++){
+                if(data[i].id == x){
+                    document.getElementById("id").value = data[i].id;
+                    document.getElementById("name").value = data[i].name;
+                    document.getElementById("email").value = data[i].mail;
+                    document.getElementById("date").value = data[i].date
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

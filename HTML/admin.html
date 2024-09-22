@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3dff50b2d8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
+    <title>Admin</title>
+</head>
+<body>
+    <header class="header">
+        <a class="function" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></a>
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-info">
+                <a href="admin.html"><i class="fa-solid fa-file-invoice"></i> Quản lí đơn hàng</a>
+                <a href="adminUser.html"><i class="fa-solid fa-user"></i> Quản lí người dùng</a>
+                <a href="adminProduct.html"><i class="fa-solid fa-box"></i> Quản lí sản phẩm</a>
+            </div>   
+        </div>
+        <a class="logo"><i class="fa-brands fa-mailchimp"></i> PYP.Admin</a>
+        <ul class="userfunction">
+            <li><a onclick="toggleLogin()"><i class="fa-solid fa-user"></i></a></li>
+            <div class="login1" id="login1">
+                <div class="login-info">
+                    <a style="color: white;">Xin chào, admin NHOM12!</a>
+                    <a href="index.html" style="color: white;">Đăng xuất</a>
+                </div>
+            </div>
+        </ul>
+    </header>
+
+    <!-- Thêm phần nội dung cho quản lý đơn hàng của khách -->
+    <div id="manageOrdersContent" class="content">
+        <a class="headmanage">QUẢN LÍ ĐƠN HÀNG</a>
+        <label for="startDate">Từ ngày:</label>
+        <input type="date" id="startDate">
+        <label for="endDate">Đến ngày:</label>
+        <input type="date" id="endDate">
+        <button onclick="filterOrdersByDate()">Lọc</button>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã đơn hàng</th>
+                    <th>Ngày</th>
+                    <th>Tình trạng</th>
+                    <th>Tổng tiền</th>
+                    <th>Tên Khách Hàng</th>
+                    <th>Tên Sản Phẩm</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="manageOrdersTableBody">
+                <!-- Dữ liệu đơn hàng sẽ được thêm vào đây bằng JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal hiển thị chi tiết đơn hàng -->
+    <div id="orderDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderDetailsModal()">&times;</span>
+            <h2>Thông tin chi tiết đơn hàng</h2>
+            <p id="orderDetails"></p>
+        </div>
+    </div>
+</body>
+</html>
